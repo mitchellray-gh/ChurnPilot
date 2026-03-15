@@ -1,26 +1,102 @@
 [
   {
+    "id": "offer_ba_1",
+    "bank": "Chase",
+    "offerName": "Total Checking Bonus",
+    "type": "bank_account",
+    "bonus": "$300",
+    "scope": "national",
+    "link": "https://www.chase.com/personal/checking/total-checking-account",
+    "annualValue": 300
+  },
+  {
+    "id": "offer_ba_2",
+    "bank": "Capital One",
+    "offerName": "360 Checking Offer",
+    "type": "bank_account",
+    "bonus": "$200",
+    "scope": "national",
+    "link": "https://www.capitalone.com/bank/checking/",
+    "annualValue": 200
+  },
+  {
+    "id": "offer_ba_3",
+    "bank": "Bank of America",
+    "offerName": "Preferred Rewards Bonus",
+    "type": "bank_account",
+    "bonus": "$250",
+    "scope": "national",
+    "link": "https://www.bankofamerica.com/en_US/personal-banking/checking/",
+    "annualValue": 250
+  },
+  {
+    "id": "offer_ba_4",
+    "bank": "Ally Bank",
+    "offerName": "CheckingSavings Bonus",
+    "type": "bank_account",
+    "bonus": "$150",
+    "scope": "national",
+    "link": "https://www.ally.com/bank/checking-account/",
+    "annualValue": 150
+  },
+  {
+    "id": "offer_sa_1",
+    "bank": "Marcus by Goldman Sachs",
+    "offerName": "High Yield Savings 4.5% APY",
+    "type": "savings_account",
+    "bonus": "4.5% APY",
+    "scope": "national",
+    "link": "https://www.marcus.com/savings/",
+    "annualValue": 45
+  },
+  {
+    "id": "offer_sa_2",
+    "bank": "Ally Bank",
+    "offerName": "Online Savings 4.4% APY",
+    "type": "savings_account",
+    "bonus": "4.4% APY",
+    "scope": "national",
+    "link": "https://www.ally.com/bank/online-savings-account/",
+    "annualValue": 44
+  },
+  {
     "id": "offer_cc_1",
-    "title": "Premium Rewards Credit Card - 50k points",
+    "bank": "Chase",
+    "offerName": "Sapphire Preferred $300 SUB",
     "type": "credit_card",
-    "payout": 150.0,
-    "conversion_rate": 0.004,
-    "source_url": "https://example.com/premium-cc"
+    "bonus": "$300",
+    "scope": "national",
+    "link": "https://creditcards.chase.com/travel-credit-cards/chase-sapphire-preferred/",
+    "annualValue": 450
   },
   {
     "id": "offer_cc_2",
-    "title": "No-Fee Cashback Card - $200 bonus",
+    "bank": "American Express",
+    "offerName": "Gold Card $250 SUB",
     "type": "credit_card",
-    "payout": 120.0,
-    "conversion_rate": 0.0035,
-    "source_url": "https://example.com/cashback-cc"
+    "bonus": "$250",
+    "scope": "national",
+    "link": "https://www.americanexpress.com/en-us/credit-cards/gold-card/",
+    "annualValue": 400
   },
   {
-    "id": "offer_ba_1",
-    "title": "High Yield Checking - $300 bonus",
-    "type": "bank_account",
-    "payout": 300.0,
-    "conversion_rate": 0.005,
-    "source_url": "https://example.com/high-yield-checking"
+    "id": "offer_cc_3",
+    "bank": "Capital One",
+    "offerName": "Venture X $500 SUB",
+    "type": "credit_card",
+    "bonus": "$500",
+    "scope": "national",
+    "link": "https://www.capitalone.com/credit-cards/venture-x/",
+    "annualValue": 600
+  },
+  {
+    "id": "offer_cc_4",
+    "bank": "Citi",
+    "offerName": "Strata Premier $500 SUB",
+    "type": "credit_card",
+    "bonus": "$500",
+    "scope": "national",
+    "link": "https://www.citi.com/credit-cards/credit-card-details/strata-premier/",
+    "annualValue": 550
   }
 ]
