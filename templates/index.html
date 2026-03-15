@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Offer Scanner Prototype</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      button { padding: 8px 12px; font-size: 16px; }
+      table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+      th, td { border: 1px solid #ddd; padding: 8px; }
+      th { background: #f4f4f4; }
+      .small { font-size: 13px; color: #666; }
+    </style>
+  </head>
+  <body>
+    <h1>Offer Scanner (Prototype)</h1>
+    <p class="small">This prototype uses mock data. Click "Refresh" to fetch offers and update estimated profit per action.</p>
+    <button id="refresh">Refresh</button>
+    <div id="last-updated" class="small" style="margin-top:8px;"></div>
+    <div id="offers"></div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

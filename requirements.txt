@@ -1,0 +1,8 @@
+streamlit==1.32.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+pytest==7.4.0
+
+# Optional (if you plan to run scrapers with JS rendering)
+# playwright==1.37.0
+Flask==2.2.5

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "offer_cc_1",
+    "title": "Premium Rewards Credit Card - 50k points",
+    "type": "credit_card",
+    "payout": 150.0,
+    "conversion_rate": 0.004,
+    "source_url": "https://example.com/premium-cc"
+  },
+  {
+    "id": "offer_cc_2",
+    "title": "No-Fee Cashback Card - $200 bonus",
+    "type": "credit_card",
+    "payout": 120.0,
+    "conversion_rate": 0.0035,
+    "source_url": "https://example.com/cashback-cc"
+  },
+  {
+    "id": "offer_ba_1",
+    "title": "High Yield Checking - $300 bonus",
+    "type": "bank_account",
+    "payout": 300.0,
+    "conversion_rate": 0.005,
+    "source_url": "https://example.com/high-yield-checking"
+  }
+]
