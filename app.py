@@ -1,11 +1,18 @@
 from pathlib import Path
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import json
+
+from lib.news_feeds import NewsFeedCache
+from lib.feed_scheduler import FeedScheduler
 
 APP_DIR = Path(__file__).parent
 MOCK_OFFERS_PATH = APP_DIR / "mock_data" / "offers.json"
 
 app = Flask(__name__, template_folder=str(APP_DIR / "templates"), static_folder=str(APP_DIR / "static"))
+
+# Initialize news feed cache and background scheduler
+news_cache = NewsFeedCache(ttl_seconds=900)
+feed_scheduler = FeedScheduler(cache=news_cache)
 
 
 class OfferScanner:
@@ -55,5 +62,42 @@ def api_offers():
     return jsonify({"count": len(offers), "offers": offers})
 
 
+@app.route("/api/news")
+def api_news():
+    """Return live news feed items about bank account and credit card offers.
+
+    Query params:
+        type: Filter by 'bank_account' or 'credit_card' (optional)
+        refresh: Set to 'true' to force a cache refresh (optional)
+    """
+    if request.args.get("refresh", "").lower() == "true":
+        data = news_cache.force_refresh()
+    else:
+        data = news_cache.get()
+
+    # Optional type filter
+    type_filter = request.args.get("type")
+    if type_filter in ("bank_account", "credit_card"):
+        filtered = [i for i in data["items"] if i["type"] == type_filter]
+        data = {
+            **data,
+            "items": filtered,
+            "total_count": len(filtered),
+        }
+
+    return jsonify(data)
+
+
+@app.route("/api/news/status")
+def api_news_status():
+    """Return the status of the news feed scheduler."""
+    return jsonify({
+        "scheduler_running": feed_scheduler.is_running,
+        "cache_stale": news_cache.is_stale,
+        "last_updated": news_cache._cache.get("last_updated") if news_cache._cache else None,
+    })
+
+
 if __name__ == "__main__":
+    feed_scheduler.start()
     app.run(host="127.0.0.1", port=5000, debug=True)
